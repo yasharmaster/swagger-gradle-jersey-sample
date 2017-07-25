@@ -11,9 +11,8 @@ import io.swagger.annotations.*;
  * Root resource (exposed at "myresource" path)
  */
 @Path("myresource")
-@Api(value = "MyResource", authorizations = {
-      @Authorization(value="sampleoauth", scopes = {})
-    })
+@Api(value = "My Sample Resource")
+@Produces(MediaType.TEXT_PLAIN)
 public class MyResource {
 
     /**
@@ -23,7 +22,6 @@ public class MyResource {
      * @return String that will be returned as a text/plain response.
      */
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!";
     }
